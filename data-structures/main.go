@@ -1,9 +1,16 @@
 package main
 
-import (
-	"fmt"
-)
+type Person struct {
+	Name	string
+	Surname	string
+	Age		int
+}
+
+func (p Person) GetFullName() string {
+	return p.Name + " " + p.Surname
+}
 
 func main() {
-	fmt.Println("Hello, World!")
+	person := Person{Name: "John", Surname: "Doe", Age: 25}
+	println(person.GetFullName())
 }
